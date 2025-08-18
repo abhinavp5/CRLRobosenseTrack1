@@ -1,12 +1,7 @@
 #!/bin/bash
 
 # ============================================================================
-# Background VLM Server Manager Script
-# 
-# This script manages the vLLM server as a persistent background service
-# and provides commands to start, stop, and run inference
-#
-# Usage:
+
 #   ./run_inference_background.sh start              # Start vLLM server
 #   ./run_inference_background.sh stop               # Stop vLLM server
 #   ./run_inference_background.sh status             # Check server status

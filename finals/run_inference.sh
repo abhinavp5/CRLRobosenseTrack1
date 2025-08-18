@@ -118,6 +118,14 @@ start_vllm_server() {
         --image-input-shape 1,3,448,448 \
         --image-feature-size 1176 \
         > "${VLLM_LOG}" 2>&1 &
+
+    vllm serve "$MODEL" \
+        --port ${PORTS[$IDX]} \
+        --allowed-local-media-path / \
+        --gpu-memory-utilization 0.95 \
+        --trust-remote-code \
+        --disable-log-requests \
+        >logs/vllm_${IDX}.log 2>&1 &
     
     VLLM_PID=$!
     echo -e "${GREEN}vLLM server started with PID: ${VLLM_PID}${NC}"
