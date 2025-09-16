@@ -273,7 +273,7 @@ def main():
     print("Done!")
     run = wandb.init(
         project="robosense-track1",
-        entity="moely-university-of-virginia-seas",
+        entity="moely-university-of-virginia-seas", # you can comment this wandb part out or replace my user with yours.
         config={
             "model": args.model,
             "max_model_len": args.max_model_len,
